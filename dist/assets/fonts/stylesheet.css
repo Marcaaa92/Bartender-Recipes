@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'MADE Outer Sans';
+    src: url('MADEOuterSans-Medium.eot');
+    src: url('MADEOuterSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('MADEOuterSans-Medium.woff2') format('woff2'),
+        url('MADEOuterSans-Medium.woff') format('woff'),
+        url('MADEOuterSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

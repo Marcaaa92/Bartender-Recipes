@@ -1,0 +1,10 @@
+http("https://servermarca.duckdns.org/drink/data.php?action=count","total");var a,b,total,lasta,body,dataa,lastr=1,lastrs=40;function http(t,a){"total"==a?fetch(t).then(t=>t.json()).then(t=>{total=t}).then(t=>{add()}):"all"==a?fetch(t).then(t=>t.json()).then(t=>{dataa=t}):"find"==a?fetch(t).then(t=>t.json()).then(t=>{print(t)}):fetch(t).then(t=>t.json()).then(t=>{print(t)})}function add(){a=lasta!=a?b+1:lasta,lasta=(b+=40)+1,lastrs=40,lastr=a,http(total<=b?"https://servermarca.duckdns.org/drink/data.php?action=all&start="+a+"&end="+(b=total+1):"https://servermarca.duckdns.org/drink/data.php?action=all&start="+a+"&end="+b,"table"),checkbtn()}function remove(){var t=40;t!=lastrs?(a-=t,b=lastr):(a-=t,b-=t),lasta=b+1,lastrs=t,http((lastr=a)<=1?"https://servermarca.duckdns.org/drink/data.php?action=all&start="+(a=1)+"&end="+(b=t):"https://servermarca.duckdns.org/drink/data.php?action=all&start="+a+"&end="+b,"table"),checkbtn()}function checkbtn(){1==a?(document.getElementById("button-").disabled=!0,document.getElementById("button+").disabled=!1):(document.getElementById("button+").disabled=total<b,document.getElementById("button-").disabled=!1)}function finde(){http("https://servermarca.duckdns.org/drink/data.php?action=search&item=drink&filter="+document.getElementById("term").value,"find")}function print(t){var a=document.getElementById("listDrink");a.innerHTML="";for(var n=0;n<t.length;n++){var e=a.appendChild(document.createElement("li")),r=`
+        <span class="drink--is-name"><a href="page-drink.html?${t[n].id}">${t[n].strDrink}</a></span>
+        </br>
+        <span class="drink--is-category">${t[n].strCategory}</span>
+      <figure>
+        <figcaption class="drink--is-image-is-container">
+          <img class="drink--is-image"  src="assets/images/drink-webp/${t[n].id}.webp" alt="Image of: ${t[n].strDrink}"></img>
+        </figcaption>
+      </figure>
+    `;e.innerHTML=r,e.setAttribute("class","drink")}}a=parseInt(1),b=parseInt(0),total=parseInt(0);
