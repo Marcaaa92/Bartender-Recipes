@@ -79,7 +79,19 @@ gulp.task('html', () => {
         )
         .pipe( browserSync.stream() )
 });
-
+gulp.task('php', () => {
+    return gulp
+        .src(
+            config.phpSRC, {
+                allowEmpty: true
+            }
+        )
+        .pipe( plumber( errorHandler ) )
+        .pipe(
+            gulp.dest( config.phpDST )
+        )
+        .pipe( browserSync.stream() )
+});
 /**
  * Task: `styles`.
  */
@@ -133,10 +145,12 @@ gulp.task(
         'html',
         'styles',
         'scripts',
+        'php',
         livereload, () => {
             gulp.watch( config.htmlWATCH, gulp.parallel('html') );
             gulp.watch( config.styleWATCH, gulp.parallel('styles') );
             gulp.watch( config.scriptsWATCH, gulp.parallel('scripts') );
+            gulp.watch( config.phpWATCH, gulp.parallel('php') );
         }
     )
 );

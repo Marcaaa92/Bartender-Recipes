@@ -1,4 +1,4 @@
 .vs
-
+/dist/dbconn.php
 node_modules
 /src/api/dbconn.php

@@ -9,7 +9,11 @@ module.exports = {
         htmlDST: './dist/',
         htmlWATCH: './src/views/**.html',
     // END HTML
-
+    // PHP
+        phpSRC: './src/api/**.php',
+        phpDST: './dist/',
+        phpWATCH: './src/api/**.php',
+    // END PHP
     // SCSS
         styleSRC: './src/scss/main.scss',
         styleDST: './dist/assets/styles',
