@@ -1,9 +1,10 @@
 
 # Bartender-Recipes
-Questo è un progetto creato come esame per il corso FrontEnd developing all'ITS Rizzoli nato con lo scopo di mostrare una lista di drink e la relativa ricetta per aiutare le persone a replicarli.
 
-Sito sviluppato in **JavaScript**, **HTML** e **SCSS** con backand scritto in **PHP**. 
-Dati presi da: https://www.thecocktaildb.com/api.php
+This is a project created as an exam for the FrontEnd developing course at ITS Rizzoli born with the aim of showing a list of drinks and the related recipe to help people replicate them.
+
+Site developed in **JavaScript**, **HTML** and **SCSS** with backand written in **PHP**.
+Data taken from: https://www.thecocktaildb.com/api.php
 
 ###
 
